@@ -10,21 +10,21 @@ def quicksort(arr)
 end
 
 def merge_sort(arr)
-  return arr if arr.length < 2
+  return arr if arr.size < 2
 
-  midpoint = arr.length / 2
+  mid = arr.size / 2
 
-  left = arr[0...midpoint]
-  right = arr[midpoint..-1]
+  sorted_left = merge_sort(arr[0...mid])
+  sorted_right = merge_sort(arr[mid..-1])
 
-  merge(merge_sort(left), merge_sort(right))
+  merge(sorted_left, sorted_right)
 end
 
 def merge(left, right)
   ret_arr = []
 
   until left.empty? || right.empty?
-    left.first < right.first ? ret_arr << left.shift : ret_arr << right.shift
+    left[0] < right[0] ? ret_arr << left.shift : ret_arr << right.shift
   end
 
   ret_arr + left + right
@@ -44,5 +44,5 @@ end
 
 arr = [1, 3, 6, 2, 3, 8, 2, 3, 0, 1, -1, 22, 2243, 42]
 quicksort(arr)
-merge_sort(arr)
-p bubble_sort(arr)
+p merge_sort(arr)
+bubble_sort(arr)
