@@ -43,11 +43,26 @@ class BinarySearchTree
     end
   end
 
+  def find(val, branch_node = @head)
+    return "NOT FOUND" if branch_node == nil
+    return branch_node if branch_node.val == val
+
+    case val <=> branch_node.val
+    when 1
+      find(val, branch_node.right_child)
+    else
+      find(val, branch_node.left_child)
+    end
+  end
+
 end
 
 tree = BinarySearchTree.new
 tree.insert(6)
+tree.insert(4)
 tree.insert(7)
 tree.insert(7)
-
-p tree
+tree.insert(9)
+tree.insert(8)
+# p tree.find(8)
+# p tree.find(5)
