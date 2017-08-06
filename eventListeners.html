@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="textBox">
+    </div>
+    <script>
+      const textBox = document.querySelector('#textBox');
+      let timer;
+
+      const setTimer = () => {
+        timer = setTimeout(() => {console.log('saved!')}, 1000);
+      }
+
+      const clearTimer = () => {
+        clearTimeout(timer);
+      }
+
+      textBox.addEventListener('keyup', () => {
+        clearTimer();
+        setTimer();
+      });
+    </script>
+  </body>
+</html>
