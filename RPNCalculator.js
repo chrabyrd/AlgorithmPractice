@@ -1,4 +1,4 @@
-function npmCalculator() {
+function RPNCalculator() {
 
   let numbers = [];
   let total = 0;
@@ -25,7 +25,7 @@ function npmCalculator() {
           return "ERROR"
       }
 
-      numbers = [];      
+      numbers = [];
       console.log(total);
       return total;
     }
@@ -33,7 +33,7 @@ function npmCalculator() {
 };
 
 
-const calculator = npmCalculator();
+const calculator = RPNCalculator();
 calculator(3);
 calculator(6);
 calculator('+');
