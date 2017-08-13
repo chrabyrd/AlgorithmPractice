@@ -13,9 +13,7 @@ const majorityElement = function(nums) {
     });
 
     Object.keys(hash).forEach(key => {
-       if (!retKey || hash[key] > hash[retKey]) {
-           retKey = key;
-       }
+       if (!retKey || hash[key] > hash[retKey]) retKey = key;
     });
 
     return parseInt(retKey);
