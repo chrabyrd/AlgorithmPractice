@@ -27,3 +27,16 @@ var pathSum = function(root, sum) {
 
     return retArr;
 };
+
+var intersection = function(nums1, nums2) {
+    const retHash = {};
+    const hash = {};
+
+    nums1.forEach(num => hash[num] = true);
+
+    nums2.forEach(num => {
+       if (hash[num]) retHash[num] = true;
+    });
+
+    return Object.keys(retHash).map(val => parseInt(val));
+};
