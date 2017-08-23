@@ -19,7 +19,7 @@ def longest_palindrome(s)
 
 end
 
-def length_of_longest_substring(s)
+def length_of_longest_substring(s) #Without repeating characters
     str_arr = s.chars
     hash = {}
     queue = []
